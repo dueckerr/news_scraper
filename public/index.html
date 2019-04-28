@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand">Mongo Scraper</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="index.html">Home</a></li>
+      <li><a href="#">Saved Articles</a></li>
+      <li><a button type="button" class="btn btn-danger" id = 'scrape-btn'>Scrape New Articles</a>
+        <br>
+      <li><a button type="button" class="btn btn-danger" id = 'show-articles-btn'>Show New Articles</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="container-fluid" id = 'header'></div>
+<div class="jumbotron">
+  <h1>Mongo Scraper</h1>      
+  <p>Outside Magazine Latest Article Scraper</p>
+</div>
+
+<div class="container">
+  <div id="articles"></div>
+  <div id="notes"></div>     
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
