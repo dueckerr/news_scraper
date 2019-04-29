@@ -23,7 +23,10 @@ mongoose.connect("mongodb://localhost/outside_scrape", { useNewUrlParser: true }
 
 
 // Routes
-
+app.get("/", function(req, res) {
+    res.json(path.join(__dirname, "public/index.html"));
+  });
+  
 // get route to scrape from https://www.outsideonline.com/
 app.get('/scrape', function(req, res) {
     axios.get('https://www.outsideonline.com/').then(function(response) {
@@ -66,7 +69,7 @@ app.get('/articles', function (req, res) {
 })
 
 app.get('/article/:id', function(req, res) {
-    db. Article.findOne({_id: req.params.id})
+    db.Article.findOne({_id: req.params.id})
         .populate('note')
         .then(function(dbArticle){
             res.json(dbArticle);
