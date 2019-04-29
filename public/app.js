@@ -22,6 +22,7 @@ $('#show-articles-btn').on('click', function () {
             $('#articles').append(`<p>${data[i].title}</p>`)
             $('#articles').append(`<p>${data[i].summary}</p>`)
             $('#articles').append(`<p>${data[i].link}</p>`)
+            $('#articles').append(`<button>Save</button>`).attr('id = save')
             $('#articles').append(`<br></br>`)
             console.log( "ready!" );
 
