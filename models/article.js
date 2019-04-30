@@ -22,11 +22,11 @@ var ArticleSchema = new Schema({
     },
     // 'note' is an object that stores a note id
     // links to note model
-    note: {
+    notes: [{
         type: Schema.Types.ObjectId,
         ref: "Note"
-      } 
-})
+     }]
+   });
 
 // creates model for article schema
 var Article  = mongoose.model('Article', ArticleSchema);

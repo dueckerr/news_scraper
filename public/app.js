@@ -5,7 +5,32 @@ $('#scrape-btn').on('click', function () {
         url: '/scrape',
     }).then(function(data) {
         alert("Scrape Complete!");
+        window.location = '/';
         console.log( "ready!" );
+    })
+});
+
+
+// save article
+$('#save').on('click', function () {
+    var thisID = $(this).attr('data-id');
+    $.ajax({
+        method: "POST",
+        url: '/save' + thisID
+    }).done(function(data) {
+        window.location = '/'
+        console.log('saved')
+    })
+});
+
+// delete article
+$(".delete").on("click", function() {
+    var thisId = $(this).attr("data-id");
+    $.ajax({
+        method: "POST",
+        url: "/articles/delete/" + thisId
+    }).done(function(data) {
+        window.location = "/saved"
     })
 });
 

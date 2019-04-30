@@ -3,9 +3,14 @@ const mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 // note object
-var NoteSchema = new Schema ({
-    title: String,
-    body: String
+var NoteSchema = new Schema({
+    body: {
+        type: String
+    },
+    article: {
+        type: Schema.Types.ObjectId,
+        ref: "Article"
+    }
 });
 
 // creates model note schema - using mongoose model method

@@ -1,40 +1,8 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const axios = require('axios');
-const cheerio = require('cheerio');
-const db = require('./models')
+var db = require("../models");
 
-// Port
-var PORT = process.env.PORT || 3000;
-
-// Initialize Express
-var app = express();
-
-// Parse request body as JSON
-app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
-app.use(express.static("public"));
-
-// Make public a static folder
-app.use(express.static("public"));
-
-//  handlebars
-var exphbs = require("express-handlebars");
-
-app.engine(
-    "handlebars",
-    exphbs({
-      defaultLayout: "main"
-    })
-  );
-  app.set("view engine", "handlebars");
-
-// Connect to the Mongo DB
-mongoose.connect("mongodb://localhost/outside_scrape", { useNewUrlParser: true });
-
-
-
-app.get("/", function (req, res) {
+module.exports = function(app) {
+  // Load index page
+  app.get("/", function (req, res) {
     db.Article.find({ "saved": false }, function (error, data) {
         var hbsObject = {
             article: data
@@ -106,9 +74,4 @@ app.get('/article/:id', function(req, res) {
             res.json(err);
         });
 });
-
-// Start the server
-app.listen(PORT, function() {
-    console.log("App running on port " + PORT + "!");
-  });
-
+};

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta http-equiv="X-UA-Compatible" content="ie=edge">
+            <link rel="icon" href="" type="image/gif" sizes="16x16">
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  {{!-- <link rel="stylesheet" href="/styles/styles.css"  type="text/css"> --}}
+
+  <title>Home Page</title>
+</head>
+
+<body>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand">Mongo Scraper</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="index.html">Home</a></li>
+      <li><a href="/saved">Saved Articles</a></li>
+      <li><a button type="button" class="btn btn-danger" id = 'scrape-btn'>Scrape New Articles</a>
+        <br>
+      <li><a button type="button" class="btn btn-danger" id = 'show-articles-btn'>Show New Articles</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+	{{{body}}}
+
+
+  <script src="/app.js"></script>
+  </body>
+  </html>
