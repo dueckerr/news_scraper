@@ -30,7 +30,8 @@ app.engine(
   app.set("view engine", "handlebars");
 
 // Connect to the Mongo DB
-mongoose.connect("mongodb://localhost/outside_scrape", { useNewUrlParser: true });
+const CONNECTION_STRING = process.env.MONGODB_URI || "mongodb://localhost/outside_scrape";
+mongoose.connect(CONNECTION_STRING, { useNewUrlParser: true });
 
 
 
